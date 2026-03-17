@@ -27,10 +27,9 @@ export function NavBar() {
       className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4"
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: 0.5 }}
       style={{
-        background:
-          "linear-gradient(to bottom, rgba(15, 12, 41, 0.95), transparent)",
+        background: "linear-gradient(to bottom, rgba(245, 240, 232, 0.96), rgba(245, 240, 232, 0))",
         backdropFilter: "blur(12px)",
       }}
     >
@@ -38,7 +37,7 @@ export function NavBar() {
       <button
         onClick={() => scrollTo("hero")}
         onMouseEnter={() => playSound("hover")}
-        className="font-display font-bold text-xl tracking-tight text-white hover:text-sunset-orange transition-colors"
+        className="font-bold text-xl tracking-tight text-sand-900 hover:text-accent-orange transition-colors"
         style={{ fontFamily: "'Clash Display', sans-serif" }}
       >
         AK
@@ -54,15 +53,15 @@ export function NavBar() {
               className={cn(
                 "text-sm font-medium tracking-wide transition-colors relative",
                 activeSection === id
-                  ? "text-sunset-orange"
-                  : "text-white/60 hover:text-white"
+                  ? "text-accent-orange"
+                  : "text-sand-600 hover:text-sand-900"
               )}
             >
               {label}
               {activeSection === id && (
                 <motion.span
                   layoutId="nav-dot"
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-sunset-orange rounded-full"
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent-orange rounded-full"
                 />
               )}
             </button>
@@ -72,12 +71,9 @@ export function NavBar() {
 
       {/* Mute toggle */}
       <button
-        onClick={() => {
-          toggleMute();
-          playSound("click");
-        }}
+        onClick={() => { toggleMute(); playSound("click"); }}
         onMouseEnter={() => playSound("hover")}
-        className="text-white/60 hover:text-white transition-colors p-2"
+        className="text-sand-500 hover:text-sand-900 transition-colors p-2"
         aria-label={muted ? "Unmute sounds" : "Mute sounds"}
       >
         {muted ? (

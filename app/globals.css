@@ -14,16 +14,27 @@
 
 /* ── Tailwind v4 theme ─────────────────────────────────────────────────────── */
 @theme {
-  /* Sunset Palette */
-  --color-sunset-orange: #f97316;
-  --color-sunset-orange-light: #fb923c;
-  --color-sunset-orange-dark: #ea580c;
-  --color-sunset-pink: #ec4899;
-  --color-sunset-pink-light: #f472b6;
-  --color-sunset-pink-dark: #db2777;
-  --color-deep-blue: #0f0c29;
-  --color-deep-blue-mid: #1a1040;
-  --color-deep-blue-light: #2d1b69;
+  /* Sand Palette */
+  --color-sand-50:  #FDFAF4;
+  --color-sand-100: #F5F0E8;
+  --color-sand-200: #EDE8DC;
+  --color-sand-300: #DDD7C8;
+  --color-sand-400: #C4BBA8;
+  --color-sand-500: #9A8468;
+  --color-sand-600: #7A6448;
+  --color-sand-700: #5C4A30;
+  --color-sand-800: #3D3020;
+  --color-sand-900: #2C2010;
+
+  /* Orange Accent */
+  --color-accent-orange:       #E8720C;
+  --color-accent-orange-light: #F59340;
+  --color-accent-orange-dark:  #C45A08;
+
+  /* Sky Blue Accent */
+  --color-accent-blue:       #3B9ED9;
+  --color-accent-blue-light: #7EC8EA;
+  --color-accent-blue-dark:  #1E7AB5;
 
   /* Fonts */
   --font-display: "Clash Display", "Syne", sans-serif;
@@ -41,8 +52,8 @@
   }
 
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px rgba(249, 115, 22, 0.3); }
-    50% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.7), 0 0 60px rgba(236, 72, 153, 0.3); }
+    0%, 100% { box-shadow: 0 0 20px rgba(232, 114, 12, 0.25); }
+    50% { box-shadow: 0 0 40px rgba(232, 114, 12, 0.5), 0 0 60px rgba(59, 158, 217, 0.2); }
   }
 
   @keyframes slide-up {
@@ -53,20 +64,19 @@
 
 /* ── Base styles ───────────────────────────────────────────────────────────── */
 :root {
-  --background: #0f0c29;
-  --foreground: #f5f0ff;
-  color-scheme: dark;
+  --background: #F5F0E8;
+  --foreground: #2C2010;
+  color-scheme: light;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
+/* Tailwind Preflight (included via @import "tailwindcss") already resets
+   * { box-sizing: border-box; margin: 0; padding: 0 } inside @layer base.
+   We must NOT re-declare that reset here because Turbopack/LightningCSS
+   strips @layer context from user CSS, so any duplicate reset ends up as
+   unlayered CSS which overrides ALL Tailwind utilities (mx-auto, px-*, etc). */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* offset for sticky navbar */
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -83,10 +93,10 @@ body {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f0c29;
+  background: #EDE8DC;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #f97316, #ec4899);
+  background: linear-gradient(180deg, #E8720C, #3B9ED9);
   border-radius: 2px;
 }
 
@@ -99,8 +109,24 @@ body {
   display: none;
 }
 
+/* ── Block heading style (retro 3D sand-block text) ───────────────────────── */
+.heading-block {
+  font-family: "Clash Display", "Impact", "Arial Black", sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #FFBB7A;
+  text-shadow:
+     2px  2px 0 #B84D00,
+     4px  4px 0 #A34300,
+     6px  6px 0 #8F3A00,
+     8px  8px 0 #7A3100,
+    10px 10px 0 #662900,
+    12px 12px 0 #522200,
+    14px 14px 0 rgba(50, 20, 0, 0.25);
+}
+
 /* ── Selection ─────────────────────────────────────────────────────────────── */
 ::selection {
-  background: rgba(249, 115, 22, 0.3);
-  color: #fff;
+  background: rgba(232, 114, 12, 0.2);
+  color: #2C2010;
 }

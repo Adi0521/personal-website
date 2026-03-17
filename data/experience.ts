@@ -14,7 +14,7 @@ export const experience: ExperienceItem[] = [
     ],
     techTags: ["AWS Lambda", "Terraform", "SageMaker", "Step Functions", "Python", "Serverless"],
     splineScene: "SERVER",
-    accentColor: "bg-sunset-orange",
+    accentColor: "bg-accent-orange",
   },
   {
     id: "engelken-lab",
@@ -29,7 +29,7 @@ export const experience: ExperienceItem[] = [
     ],
     techTags: ["Julia", "Python", "Computational Neuroscience", "Dynamical Systems"],
     splineScene: "NEURON_SPIKE",
-    accentColor: "bg-sunset-pink",
+    accentColor: "bg-accent-blue",
   },
   {
     id: "divergence",
@@ -45,7 +45,7 @@ export const experience: ExperienceItem[] = [
     ],
     techTags: ["Python", "Triton", "TensorRT", "ONNX", "FastAPI", "NCCL", "CUDA", "RL"],
     splineScene: "SERVER",
-    accentColor: "bg-purple-500",
+    accentColor: "bg-accent-blue-light",
   },
   {
     id: "attune",
@@ -60,7 +60,7 @@ export const experience: ExperienceItem[] = [
     ],
     techTags: ["Python", "TensorFlow", "LSTM", "EEG", "VR", "Signal Processing", "GMM"],
     splineScene: "NEURON_SPIKE",
-    accentColor: "bg-sunset-pink-dark",
+    accentColor: "bg-accent-blue",
   },
   {
     id: "science-gurus",
@@ -75,6 +75,6 @@ export const experience: ExperienceItem[] = [
     ],
     techTags: ["R", "Python", "Bioinformatics", "Genomics", "NMOSD"],
     splineScene: "PROTEIN",
-    accentColor: "bg-sunset-orange-light",
+    accentColor: "bg-accent-orange",
   },
 ];

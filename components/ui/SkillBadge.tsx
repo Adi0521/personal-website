@@ -10,9 +10,9 @@ interface SkillBadgeProps {
 }
 
 const proficiencyStyles = {
-  core: "border-sunset-orange/40 text-sunset-orange bg-sunset-orange/10 hover:bg-sunset-orange/20",
-  proficient: "border-sunset-pink/30 text-sunset-pink/80 bg-sunset-pink/5 hover:bg-sunset-pink/10",
-  familiar: "border-white/10 text-white/40 hover:border-white/20 hover:text-white/60",
+  core:       "border-accent-orange/50 text-accent-orange bg-accent-orange/10 hover:bg-accent-orange/20",
+  proficient: "border-accent-blue/40 text-accent-blue bg-accent-blue/8 hover:bg-accent-blue/15",
+  familiar:   "border-sand-300 text-sand-600 hover:border-sand-400 hover:text-sand-800",
 };
 
 export function SkillBadge({ skill }: SkillBadgeProps) {
@@ -22,7 +22,7 @@ export function SkillBadge({ skill }: SkillBadgeProps) {
   return (
     <motion.span
       className={cn(
-        "px-3 py-1.5 rounded-full text-sm font-medium border cursor-default transition-all duration-200",
+        "px-5 py-2.5 rounded-full text-base font-medium border cursor-default transition-all duration-200",
         style
       )}
       onHoverStart={() => playSound("hover")}

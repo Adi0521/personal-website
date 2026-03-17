@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { useRef, useState, useCallback } from "react";
 import { useInView } from "framer-motion";
 import { cn } from "@/lib/cn";
+import { SPLINE_ENABLED } from "@/lib/spline-events";
 
 const Spline = dynamic(() => import("@splinetool/react-spline"), {
   ssr: false,
@@ -44,6 +45,8 @@ export function SplineScene({
     [onLoad]
   );
 
+  if (!SPLINE_ENABLED) return null;
+
   return (
     <div
       ref={containerRef}
@@ -69,6 +72,6 @@ export function SplineScene({
 
 function SplineFallback() {
   return (
-    <div className="w-full h-full animate-pulse bg-gradient-to-br from-sunset-orange/10 via-deep-blue-mid to-sunset-pink/10 rounded-xl" />
+    <div className="w-full h-full animate-pulse bg-gradient-to-br from-sand-200 via-sand-300 to-accent-orange/10 rounded-xl" />
   );
 }

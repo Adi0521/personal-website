@@ -13,23 +13,22 @@ export function ExperienceSection() {
         <div className="text-center mb-20">
           <motion.p
             variants={itemVariants}
-            className="text-sunset-orange font-mono text-sm tracking-widest uppercase mb-4"
+            className="text-accent-orange font-mono text-sm tracking-widest uppercase mb-4"
           >
             Work & Research
           </motion.p>
           <motion.h2
             variants={itemVariants}
-            className="text-5xl md:text-6xl font-bold text-white"
-            style={{ fontFamily: "'Clash Display', sans-serif" }}
+            className="heading-block text-5xl md:text-6xl"
           >
-            Experience
+            EXPERIENCE
           </motion.h2>
         </div>
 
         {/* Timeline */}
         <div className="relative">
           {/* Center line */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/10 to-transparent -translate-x-1/2" />
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-sand-400 to-transparent -translate-x-1/2" />
 
           <div className="space-y-12">
             {experience.map((item, index) => (

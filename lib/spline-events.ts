@@ -1,6 +1,9 @@
 // All Spline scene URLs, object names, and event names in one place.
 // Never hard-code these strings in component files.
 
+// Toggle to false to render the site without any 3D scenes (useful while authoring scenes).
+export const SPLINE_ENABLED = false;
+
 export const SPLINE_SCENES = {
   HERO_NEURAL:  "https://prod.spline.design/placeholder-hero/scene.splinecode",
   MINI_CAR:     "https://prod.spline.design/placeholder-car/scene.splinecode",
